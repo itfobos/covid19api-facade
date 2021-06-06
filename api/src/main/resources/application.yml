@@ -1,2 +1,8 @@
 feign:
-  hystrix.enabled: false
+  hystrix.enabled: true
+
+# To set thread isolation to SEMAPHORE
+hystrix.command.default.execution.isolation.strategy: SEMAPHORE
+
+logging.level.covid19api.facade.api:
+  client.CovidApiClient: INFO

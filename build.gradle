@@ -30,8 +30,8 @@ subprojects {
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'java'
 
-    sourceCompatibility = '11'
-    targetCompatibility = '11'
+    sourceCompatibility = '15'
+    targetCompatibility = '15'
 
     bootJar {
         archivesBaseName = "covid19api-facade-${project.name}"
@@ -49,6 +49,10 @@ subprojects {
 
     test {
         useJUnitPlatform()
+    }
+
+    compileJava {
+        options.compilerArgs += ['--enable-preview']
     }
 }
 
